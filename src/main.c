@@ -19,7 +19,7 @@
 
 #include "system.h"        /* System funct/params, like osc/peripheral config */
 #include "user.h"          /* User funct/params, such as InitApp              */
-
+#include "leds.h"
 /******************************************************************************/
 /* Global Variable Declaration                                                */
 /******************************************************************************/
@@ -29,10 +29,8 @@
 /******************************************************************************/
 /* Main Program                                                               */
 /******************************************************************************/
-
 int16_t main(void)
 {
-
     /* Configure the oscillator for the device */
     ConfigureOscillator();
 
@@ -41,6 +39,34 @@ int16_t main(void)
 
     /* TODO <INSERT USER APPLICATION CODE HERE> */
 
+    /* turn on a led*/
+    
+    LED_Enable(LED_D3);
+    LED_Enable(LED_D4);
+    LED_Enable(LED_D5);
+    LED_Enable(LED_D6);
+    LED_Enable(LED_D7);
+    LED_Enable(LED_D8);
+    LED_Enable(LED_D9);
+    LED_Enable(LED_D10);
+    
+    LED_On(LED_D3);
+    LED_On(LED_D4);
+    LED_On(LED_D5);
+    LED_On(LED_D6);
+    LED_On(LED_D7);
+    LED_On(LED_D8);
+    LED_On(LED_D9);
+    LED_On(LED_D10);
+    
+    if (LED_Get(LED_D3))
+    {
+        LED_Off(LED_D3);
+    }
+    
+    LED_Toggle(LED_D3);
+    LED_Toggle(LED_D3);
+    
     while(1)
     {
 
